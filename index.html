@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado con éxito:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Fallo en el registro del Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My appStore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+           background-image: 
+        linear-gradient(to bottom, rgba(26, 10, 10, 0.7), rgba(26, 10, 10, 0.7)), /* Degrade de oscuro semi-transparente a negro opaco */
+        url('mi_banner_tv.png'); /* La imagen de fondo real */
+            color: #E0E0E0;
+        }
+        .app-container::-webkit-scrollbar {
+            display: none;
+        }
+        .app-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Animación de carga */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const { useState } = React;
+    const { createRoot } = ReactDOM;
+
+    const apps = [
+        {
+            id: 'Worldtv',
+            name: 'worldtv',
+            publisher: 'WorldTv',
+            icon: 'icons/worldtv.png',
+            description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_3_2.0.7-1.1.apk',
+        },
+        {
+            id: 'SFTV',
+            name: 'SFTV',
+            publisher: 'Health TV Co.',
+            icon: '/icons/sftv.png',
+            description: 'SFTV es una sencilla aplicación para conectar tu Smart TV Android, tu dispositivo móvil Android y tu ordenador. Te permite compartir películas, programas de televisión o cualquier archivo entre estos dispositivos de forma rápida y sencilla a través de tu red local.No requiere internet.' ,
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm', 
+        },
+        {
+            id: 'MPLUS2',
+            name: 'mplus2_sign',
+            publisher: 'mplus.',
+            icon: 'icons/mplus.png',
+            description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Bundesliga alemana, la Copa de Alemania, la Serie A francesa, la Copa FA, la Superliga portuguesa, la Liga de fútbol profesional australiana, la Liga de fútbol profesional de Corea del Sur, la Primera división brasileña Football League, Brazilian Sao Paulo Provincial League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup, Asian Football Confederation Cup, American Professional Basketball League, Spanish First Division Basketball League y Australian Basketball League y otros eventos en vivo.',
+            // Enlace de GitHub verificado y funcionando
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk', 
+        },
+        {
+            id: 'Projectivy launcher',
+            name: 'PROJECTIVY LAUNCHER',
+            publisher: 'projectivy launcher',
+            icon: 'icons/projectivylauncher.png',
+            description: 'Projectivy Launcher es un lanzador (launcher) alternativo para Android TV que permite personalizar la pantalla de inicio y ofrece una experiencia sin publicidad permite a los usuarios organizar sus aplicaciones, personalizar la apariencia de la interfaz y eliminar la publicidad que a menudo se encuentra en los launchers predeterminados de Android TV.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Projectivy.Launcher.apk', 
+        },
+        {
+            id: 'mgt',
+            name: 'Magis TV',
+            publisher: 'MagisTV',
+            icon: 'icons/magistv.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://www.magistv-pc.app/descargar/magis-video.apk',
+        },
+        {
+            id: 'Smartube',
+            name: 'Smartube',
+            publisher: 'smartube',
+            icon: 'icons/smartube.png',
+            description: 'Mira Mira los videos favoritos de youtube, ahora desde la comodidad de tu tv.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/smarttube.apk',
+        },
+        {
+            id: 'VAIO_TV',
+            name: 'VAIO TV',
+            publisher: 'Stream Labs',
+            icon: 'icons/vaio.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/VAIO.TV_0.1.0.apk',
+        },
+        {
+            id: 'Pluto_tv',
+            name: 'Pluto TV',
+            publisher: 'plutotv',
+            icon: 'icons/plutotv.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/plutotv.apk',
+        },
+         {
+            id: 'dtv',
+            name: 'Dtv',
+            publisher: 'dtv',
+            icon: 'icons/dtv.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/dtv.2.apk',
+        },
+         {
+            id: 'Lm tv',
+            name: 'Lm tv',
+            publisher: 'Lm tv',
+            icon: 'icons/lm.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/LM.ATV.-.1.0.4.apk',
+        },
+        {
+            id: 'Ott tv',
+            name: 'Ott tv',
+            publisher: 'Ott tv',
+            icon: 'icons/ott.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/ottnav.apk',
+        },
+        {
+            id: 'playfy',
+            name: 'playfly',
+            publisher: 'playfy',
+            icon: 'icons/playfly.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/playfy.tv_v1.2_opt.apk',
+        },
+         {
+            id: 'playpelis',
+            name: 'playpelis',
+            publisher: 'playpelis',
+            icon: 'icons/playpelis.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayPelis+.1.4.8.apk',
+        },
+        {
+            id: 'Rb',
+            name: 'Rb tv',
+            publisher: 'Rb tv',
+            icon: 'icons/rbtv.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/FCTV33.TV.3.0.307.apk',
+        },
+        {
+            id: 'tvonline',
+            name: 'Tv online',
+            publisher: 'Tv online',
+            icon: 'icons/tvonline.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TVONLINE1.apk',
+        },
+        {
+            id: 'Vertex',
+            name: 'Vertex',
+            publisher: 'Vertex',
+            icon: 'icons/vertex.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Vertex.TV+.PRO.apk',
+        },
+        {
+            id: 'Tv Clasica',
+            name: 'Tv Clasica',
+            publisher: 'Tv clasica',
+            icon: 'icons/clasica.png',
+            description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TV.CLASICA.100.apk',
+        },
+    ];
+
+    const AppCard = ({ app, onPress }) => (
+        <button
+            onClick={onPress}
+            className="w-[10rem] flex-none bg-gray-800 rounded-3xl p-6 shadow-xl cursor-pointer transition-transform duration-200 hover:scale-105"
+        >
+            <div className="flex flex-col items-center text-center">
+                <img src={app.icon} alt={`Icono de la aplicación ${app.name}`} className="w-20 h-20 rounded-2xl shadow-lg mb-4" />
+                <h3 className="text-lg font-semibold text-white truncate w-full">{app.name}</h3>
+                <p className="text-sm text-gray-400 truncate w-full">{app.publisher}</p>
+            </div>
+        </button>
+    );
+
+    const App = () => {
+        const [modalVisible, setModalVisible] = useState(false);
+        const [selectedApp, setSelectedApp] = useState(null);
+        const [isLoadingReview, setIsLoadingReview] = useState(false);
+        const [generatedReview, setGeneratedReview] = useState('');
+
+        const openModal = (app) => {
+            setSelectedApp(app);
+            setGeneratedReview('');
+            setIsLoadingReview(false);
+            setModalVisible(true);
+        };
+
+        const closeModal = () => {
+            setModalVisible(false);
+            setSelectedApp(null);
+        };
+
+        const handleDownload = (url) => {
+            if (window.AndroidInterface && typeof window.AndroidInterface.startDownload === 'function') {
+                window.AndroidInterface.startDownload(url);
+            } else {
+                window.open(url, '_blank');
+            }
+            closeModal();
+        };
+
+        const generateAppReview = async (appName, appDescription) => {
+            setIsLoadingReview(true);
+            setGeneratedReview('');
+            
+            const prompt = `Actúa como un crítico de aplicaciones para Android TV. Genera un resumen de reseñas de un solo párrafo para la aplicación "${appName}" con la siguiente descripción: "${appDescription}". Incluye tanto puntos positivos como negativos para que sea una reseña equilibrada.`;
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // ¡ADVERTENCIA: CLAVE EXPUESTA!
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    setGeneratedReview(text);
+                } else {
+                    setGeneratedReview("No se pudo generar una reseña. Inténtalo de nuevo.");
+                }
+            } catch (error) {
+                console.error("Error al llamar a la API de Gemini:", error);
+                setGeneratedReview("Ocurrió un error. Por favor, intenta de nuevo más tarde.");
+            } finally {
+                setIsLoadingReview(false);
+            }
+        };
+
+        return (
+            <div className="p-8 pb-16 min-h-screen">
+                <header className="mb-8 text-center">
+                    <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
+                        <span className="text-purple-500">MY App</span><span className="text-white">Store</span> 
+                    </h1>
+                    <p className="text-gray-400 text-lg mt-2">
+                        Explora y descarga aplicaciones para tu TV.
+                    </p>
+                </header>
+
+                <section className="mb-10">
+                    <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
+                    <div className="app-container flex overflow-x-auto space-x-6 pb-4">
+                        {apps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
+                            <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
+                        ))}
+                    </div>
+                </section>
+
+                <section>
+                    <h2 className="text-2xl font-bold mb-4 ml-2">Aplicaciones</h2>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
+                        {apps.map(app => (
+                            <div key={app.id} className="col-span-1">
+                                <AppCard app={app} onPress={() => openModal(app)} />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Modal de detalles de la aplicación */}
+                {modalVisible && selectedApp && (
+                    <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
+                        <div className="bg-gray-800 rounded-3xl p-10 max-w-2xl w-full shadow-2xl relative">
+                            <button
+                                onClick={closeModal}
+                                className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold"
+                            >
+                                &times;
+                            </button>
+                            <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                                <img src={selectedApp.icon} alt="Icono de la aplicación" className="w-24 h-24 rounded-2xl shadow-xl"/>
+                                <div className="text-center md:text-left">
+                                    <h3 className="text-4xl font-extrabold mb-2 text-white">{selectedApp.name}</h3>
+                                    <p className="text-gray-400 mb-4">{selectedApp.publisher}</p>
+                                    <p className="text-gray-300 text-sm leading-relaxed mb-6">{selectedApp.description}</p>
+                                    <button
+                                        onClick={() => handleDownload(selectedApp.downloadUrl)}
+                                        className="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
+                                    >
+                                        Descargar
+                                    </button>
+                                    
+                                    {/* Sección de Reseña Generada por la IA */}
+                                    <div className="mt-6">
+                                        <button
+                                            onClick={() => generateAppReview(selectedApp.name, selectedApp.description)}
+                                            className="bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300"
+                                            disabled={isLoadingReview}
+                                        >
+                                            {isLoadingReview ? 'Generando...' : '✨ Generar Reseña'}
+                                        </button>
+
+                                        {isLoadingReview && (
+                                            <div className="mt-4 flex justify-center">
+                                                <div className="w-6 h-6 border-2 border-t-2 border-gray-200 border-t-transparent rounded-full animate-spin"></div>
+                                            </div>
+                                        )}
+                                        {generatedReview && (
+                                            <div className="mt-4 bg-gray-700 rounded-xl p-4">
+                                                <p className="text-white text-base font-semibold">Reseñas de la Comunidad:</p>
+                                                <p className="text-gray-300 text-sm mt-2">{generatedReview}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    };
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(<App />);
+</script>
+
+</body>
+</html>
