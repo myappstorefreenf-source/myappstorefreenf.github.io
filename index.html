@@ -25,9 +25,9 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-           background-image: 
-        linear-gradient(to bottom, rgba(26, 10, 10, 0.7), rgba(26, 10, 10, 0.7)), /* Degrade de oscuro semi-transparente a negro opaco */
-        url('mi_banner_tv.png'); /* La imagen de fondo real */
+           background-image:         
+            linear-gradient(to bottom, rgba(26, 10, 10, 0.7), rgba(26, 10, 10, 0.7)),
+            url('mi_banner_tv.png');
             color: #E0E0E0;
         }
         .app-container::-webkit-scrollbar {
@@ -48,12 +48,27 @@
     </style>
 </head>
 <body>
-
 <div id="root"></div>
-
 <script type="text/babel">
-    const { useState } = React;
+    const { useState, useEffect } = React;
     const { createRoot } = ReactDOM;
+
+    // ***************************************************************
+    // 1. OBJETO DE CONFIGURACIÓN GLOBAL (DEBES MODIFICAR ESTO PARA CADA ACTUALIZACIÓN)
+    // ***************************************************************
+    const GlobalConfig = {
+        // La versión que deberían tener los usuarios (DEBE COINCIDIR con el versionName en build.gradle)
+        requiredAppVersion: "1.0", 
+        
+        // El mensaje que verán los usuarios
+        updateMessage: "Descarga la nueva versión de la App Store para obtener nuevas funciones, mejoras de estabilidad y acceso a nuevas apps.",
+        
+        // URL para descargar el NUEVO APK de la App Store (modifica este enlace)
+        updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.1.0.0/myappstore_1.1.apk",
+        
+        // Si es una actualización OBLIGATORIA (true: el botón 'Más tarde' desaparece)
+        isForced: false 
+    };
 
     const apps = [
         {
@@ -70,7 +85,7 @@
             publisher: 'Health TV Co.',
             icon: '/icons/sftv.png',
             description: 'SFTV es una sencilla aplicación para conectar tu Smart TV Android, tu dispositivo móvil Android y tu ordenador. Te permite compartir películas, programas de televisión o cualquier archivo entre estos dispositivos de forma rápida y sencilla a través de tu red local.No requiere internet.' ,
-            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm', 
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm',
         },
         {
             id: 'MPLUS2',
@@ -78,8 +93,7 @@
             publisher: 'mplus.',
             icon: 'icons/mplus.png',
             description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Bundesliga alemana, la Copa de Alemania, la Serie A francesa, la Copa FA, la Superliga portuguesa, la Liga de fútbol profesional australiana, la Liga de fútbol profesional de Corea del Sur, la Primera división brasileña Football League, Brazilian Sao Paulo Provincial League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup, Asian Football Confederation Cup, American Professional Basketball League, Spanish First Division Basketball League y Australian Basketball League y otros eventos en vivo.',
-            // Enlace de GitHub verificado y funcionando
-            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk', 
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk',
         },
         {
             id: 'Projectivy launcher',
@@ -87,7 +101,7 @@
             publisher: 'projectivy launcher',
             icon: 'icons/projectivylauncher.png',
             description: 'Projectivy Launcher es un lanzador (launcher) alternativo para Android TV que permite personalizar la pantalla de inicio y ofrece una experiencia sin publicidad permite a los usuarios organizar sus aplicaciones, personalizar la apariencia de la interfaz y eliminar la publicidad que a menudo se encuentra en los launchers predeterminados de Android TV.',
-            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Projectivy.Launcher.apk', 
+            downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Projectivy.Launcher.apk',
         },
         {
             id: 'mgt',
@@ -121,7 +135,7 @@
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/plutotv.apk',
         },
-         {
+        {
             id: 'dtv',
             name: 'Dtv',
             publisher: 'dtv',
@@ -129,7 +143,7 @@
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/dtv.2.apk',
         },
-         {
+        {
             id: 'Lm tv',
             name: 'Lm tv',
             publisher: 'Lm tv',
@@ -153,7 +167,7 @@
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/playfy.tv_v1.2_opt.apk',
         },
-         {
+        {
             id: 'playpelis',
             name: 'playpelis',
             publisher: 'playpelis',
@@ -213,6 +227,23 @@
         const [selectedApp, setSelectedApp] = useState(null);
         const [isLoadingReview, setIsLoadingReview] = useState(false);
         const [generatedReview, setGeneratedReview] = useState('');
+        
+        // 2. NUEVOS ESTADOS para el control de la versión de la App Store
+        const [appVersion, setAppVersion] = useState("0.0"); 
+        const [updateModalVisible, setUpdateModalVisible] = useState(false); 
+
+        // 3. EFECTO para verificar la versión al cargar la App Store
+        useEffect(() => {
+            if (window.AndroidInterface && typeof window.AndroidInterface.getAppVersion === 'function') {
+                const currentVersion = window.AndroidInterface.getAppVersion();
+                setAppVersion(currentVersion);
+                
+                // Comparación simple de cadenas (funciona para "1.0" vs "1.1")
+                if (currentVersion < GlobalConfig.requiredAppVersion) {
+                    setUpdateModalVisible(true);
+                }
+            }
+        }, []); 
 
         const openModal = (app) => {
             setSelectedApp(app);
@@ -232,13 +263,16 @@
             } else {
                 window.open(url, '_blank');
             }
+            // Si es una descarga de la App Store, cerramos el modal de actualización
+            if (url === GlobalConfig.updateDownloadUrl) {
+                setUpdateModalVisible(false);
+            }
             closeModal();
         };
 
         const generateAppReview = async (appName, appDescription) => {
             setIsLoadingReview(true);
             setGeneratedReview('');
-            
             const prompt = `Actúa como un crítico de aplicaciones para Android TV. Genera un resumen de reseñas de un solo párrafo para la aplicación "${appName}" con la siguiente descripción: "${appDescription}". Incluye tanto puntos positivos como negativos para que sea una reseña equilibrada.`;
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
@@ -273,8 +307,8 @@
             <div className="p-8 pb-16 min-h-screen">
                 <header className="mb-8 text-center">
                     <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
-                        <span className="text-purple-500">MY App</span><span className="text-white">Store</span> 
-                    </h1>
+                        <span className="text-purple-500">MY App</span><span className="text-white">Store</span>
+                     </h1>
                     <p className="text-gray-400 text-lg mt-2">
                         Explora y descarga aplicaciones para tu TV.
                     </p>
@@ -322,7 +356,7 @@
                                     >
                                         Descargar
                                     </button>
-                                    
+
                                     {/* Sección de Reseña Generada por la IA */}
                                     <div className="mt-6">
                                         <button
@@ -350,6 +384,40 @@
                         </div>
                     </div>
                 )}
+                
+                {/* 4. Modal de Notificación de Actualización de la App Store */}
+                {updateModalVisible && (
+                    <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
+                        <div className="bg-purple-900 rounded-3xl p-10 max-w-lg w-full shadow-2xl relative border-4 border-purple-500">
+                            <h3 className="text-3xl font-extrabold text-white mb-4 text-center">
+                                ¡Nueva Versión Disponible!
+                            </h3>
+                            <p className="text-gray-200 text-lg mb-6 text-center">
+                                Tu versión actual ({appVersion}) está desactualizada.
+                            </p>
+                            <p className="text-gray-100 text-base leading-relaxed mb-8">
+                                {GlobalConfig.updateMessage}
+                            </p>
+                            <div className="flex flex-col space-y-4">
+                                <button
+                                    onClick={() => handleDownload(GlobalConfig.updateDownloadUrl)}
+                                    className="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
+                                >
+                                    Descargar Versión {GlobalConfig.requiredAppVersion}
+                                </button>
+                                
+                                {!GlobalConfig.isForced && (
+                                    <button
+                                        onClick={() => setUpdateModalVisible(false)}
+                                        className="bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300"
+                                    >
+                                        Más tarde
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         );
     };
@@ -357,6 +425,5 @@
     const root = createRoot(document.getElementById('root'));
     root.render(<App />);
 </script>
-
 </body>
 </html>
