@@ -25,7 +25,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-           background-image:         
+            background-image: 
             linear-gradient(to bottom, rgba(26, 10, 10, 0.7), rgba(26, 10, 10, 0.7)),
             url('mi_banner_tv.png');
             color: #E0E0E0;
@@ -225,8 +225,8 @@
     const App = () => {
         const [modalVisible, setModalVisible] = useState(false);
         const [selectedApp, setSelectedApp] = useState(null);
-        const [isLoadingReview, setIsLoadingReview] = useState(false);
-        const [generatedReview, setGeneratedReview] = useState('');
+        // Se eliminaron los estados de la reseña de IA: isLoadingReview y generatedReview
+        const [searchTerm, setSearchTerm] = useState(''); // Estado para el buscador
         
         // 2. NUEVOS ESTADOS para el control de la versión de la App Store
         const [appVersion, setAppVersion] = useState("0.0"); 
@@ -244,11 +244,16 @@
                 }
             }
         }, []); 
+        
+        // Lógica de filtrado de aplicaciones para el buscador
+        const filteredApps = apps.filter(app =>
+            app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            app.publisher.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            app.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
         const openModal = (app) => {
             setSelectedApp(app);
-            setGeneratedReview('');
-            setIsLoadingReview(false);
             setModalVisible(true);
         };
 
@@ -269,68 +274,62 @@
             }
             closeModal();
         };
-
-        const generateAppReview = async (appName, appDescription) => {
-            setIsLoadingReview(true);
-            setGeneratedReview('');
-            const prompt = `Actúa como un crítico de aplicaciones para Android TV. Genera un resumen de reseñas de un solo párrafo para la aplicación "${appName}" con la siguiente descripción: "${appDescription}". Incluye tanto puntos positivos como negativos para que sea una reseña equilibrada.`;
-            let chatHistory = [];
-            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-            const payload = { contents: chatHistory };
-            const apiKey = ""; // ¡ADVERTENCIA: CLAVE EXPUESTA!
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    setGeneratedReview(text);
-                } else {
-                    setGeneratedReview("No se pudo generar una reseña. Inténtalo de nuevo.");
-                }
-            } catch (error) {
-                console.error("Error al llamar a la API de Gemini:", error);
-                setGeneratedReview("Ocurrió un error. Por favor, intenta de nuevo más tarde.");
-            } finally {
-                setIsLoadingReview(false);
-            }
-        };
+        
+        // La función generateAppReview fue eliminada.
 
         return (
             <div className="p-8 pb-16 min-h-screen">
                 <header className="mb-8 text-center">
                     <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
                         <span className="text-purple-500">MY App</span><span className="text-white">Store</span>
-                     </h1>
+                    </h1>
                     <p className="text-gray-400 text-lg mt-2">
                         Explora y descarga aplicaciones para tu TV.
                     </p>
+                    {/* --- Buscador agregado --- */}
+                    <div className="mt-6 max-w-xl mx-auto">
+                        <input
+                            type="text"
+                            placeholder="Buscar apps por nombre, editor o descripción..."
+                            className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-150"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+                    {/* ------------------------- */}
                 </header>
 
-                <section className="mb-10">
-                    <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
-                    <div className="app-container flex overflow-x-auto space-x-6 pb-4">
-                        {apps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
-                            <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
-                        ))}
-                    </div>
-                </section>
+                {/* --- SECCIÓN DESTACADAS OCULTA AL BUSCAR --- */}
+                {searchTerm === '' && (
+                    <section className="mb-10">
+                        <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
+                        {/* La sección destacadas se mantiene sin filtro de búsqueda */}
+                        <div className="app-container flex overflow-x-auto space-x-6 pb-4">
+                            {apps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
+                                <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
+                            ))}
+                        </div>
+                    </section>
+                )}
+                {/* ------------------------------------------- */}
 
                 <section>
-                    <h2 className="text-2xl font-bold mb-4 ml-2">Aplicaciones</h2>
+                    <h2 className="text-2xl font-bold mb-4 ml-2">
+                        {searchTerm === '' ? 'Aplicaciones' : `Resultados para "${searchTerm}"`}
+                    </h2>
+                    {/* Se usa filteredApps para mostrar las aplicaciones */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
-                        {apps.map(app => (
-                            <div key={app.id} className="col-span-1">
-                                <AppCard app={app} onPress={() => openModal(app)} />
-                            </div>
-                        ))}
+                        {filteredApps.length > 0 ? (
+                            filteredApps.map(app => (
+                                <div key={app.id} className="col-span-1">
+                                    <AppCard app={app} onPress={() => openModal(app)} />
+                                </div>
+                            ))
+                        ) : (
+                            <p className="text-gray-400 text-lg col-span-full text-center py-10">
+                                No se encontraron aplicaciones que coincidan con "{searchTerm}".
+                            </p>
+                        )}
                     </div>
                 </section>
 
@@ -356,29 +355,7 @@
                                     >
                                         Descargar
                                     </button>
-
-                                    {/* Sección de Reseña Generada por la IA */}
-                                    <div className="mt-6">
-                                        <button
-                                            onClick={() => generateAppReview(selectedApp.name, selectedApp.description)}
-                                            className="bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300"
-                                            disabled={isLoadingReview}
-                                        >
-                                            {isLoadingReview ? 'Generando...' : '✨ Generar Reseña'}
-                                        </button>
-
-                                        {isLoadingReview && (
-                                            <div className="mt-4 flex justify-center">
-                                                <div className="w-6 h-6 border-2 border-t-2 border-gray-200 border-t-transparent rounded-full animate-spin"></div>
-                                            </div>
-                                        )}
-                                        {generatedReview && (
-                                            <div className="mt-4 bg-gray-700 rounded-xl p-4">
-                                                <p className="text-white text-base font-semibold">Reseñas de la Comunidad:</p>
-                                                <p className="text-gray-300 text-sm mt-2">{generatedReview}</p>
-                                            </div>
-                                        )}
-                                    </div>
+                                    {/* La sección de reseña de IA fue eliminada */}
                                 </div>
                             </div>
                         </div>
