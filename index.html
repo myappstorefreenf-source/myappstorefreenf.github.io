@@ -67,7 +67,10 @@
         updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/V1.1.apk",
         
         // Si es una actualización OBLIGATORIA (true: el botón 'Más tarde' desaparece)
-        isForced: false 
+        isForced: false,
+        
+        // CONFIGURACIÓN: CONTRASEÑA DE ADULTOS (¡CÁMBIALA!)
+        adultPassword: "1234", 
     };
 
     const apps = [
@@ -78,6 +81,7 @@
             icon: 'icons/worldtv.png',
             description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_3_2.0.7-1.1.apk',
+            isAvailable: true, // Disponible
         },
         {
             id: 'SFTV',
@@ -86,14 +90,16 @@
             icon: 'icons/sftv.png',
             description: 'SFTV es una sencilla aplicación para conectar tu Smart TV Android, tu dispositivo móvil Android y tu ordenador. Te permite compartir películas, programas de televisión o cualquier archivo entre estos dispositivos de forma rápida y sencilla a través de tu red local.No requiere internet.' ,
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm',
+            isAvailable: false, // ¡Marcada como NO DISPONIBLE para la prueba!
         },
         {
             id: 'MPLUS2',
             name: 'mplus2_sign',
             publisher: 'mplus.',
             icon: 'icons/mplus.png',
-            description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Primera división brasileña Football League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup,  y otros eventos en vivo.',
+            description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Primera división brasileña Football League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup,  y otros eventos en vivo.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk',
+            isAvailable: true,
         },
         {
             id: 'Projectivy launcher',
@@ -102,6 +108,7 @@
             icon: 'icons/projectivylauncher.png',
             description: 'Projectivy Launcher es un lanzador (launcher) alternativo para Android TV que permite personalizar la pantalla de inicio y ofrece una experiencia sin publicidad permite a los usuarios organizar sus aplicaciones, personalizar la apariencia de la interfaz y eliminar la publicidad que a menudo se encuentra en los launchers predeterminados de Android TV.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Projectivy.Launcher.apk',
+            isAvailable: true,
         },
         {
             id: 'mgt',
@@ -110,6 +117,7 @@
             icon: 'icons/magistv.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://www.magistv-pc.app/descargar/magis-video.apk',
+            isAvailable: true,
         },
         {
             id: 'Smartube',
@@ -118,6 +126,7 @@
             icon: 'icons/smartube.png',
             description: 'Mira Mira los videos favoritos de youtube, ahora desde la comodidad de tu tv.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/smarttube.apk',
+            isAvailable: true,
         },
         {
             id: 'VAIO_TV',
@@ -126,7 +135,30 @@
             icon: 'icons/vaio.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/VAIO.TV_0.1.0.apk',
+            isAvailable: false,
         },
+        // --- INICIO APPS ADULTOS (EJEMPLOS) ---
+        {
+            id: 'AdultStream',
+            name: 'Adultos',
+            publisher: 'Adultos',
+            icon: 'icons/adult.png', // Asume que tienes este icono
+            description: '',
+            downloadUrl: 'https://ejemplo.com/peli-x.apk',
+            category: 'adult', 
+            isAvailable: false,
+        },
+        {
+            id: 'Adultfun',
+            name: 'Adultos 2',
+            publisher: 'Adultos',
+            icon: 'icons/adult.png', // Asume que tienes este icono
+            description: '',
+            downloadUrl: 'https://ejemplo.com/tube-night.apk',
+            category: 'adult',
+            isAvailable: false,
+        },
+        // --- FIN APPS ADULTOS ---
         {
             id: 'Pluto_tv',
             name: 'Pluto TV',
@@ -134,6 +166,7 @@
             icon: 'icons/plutotv.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/plutotv.apk',
+            isAvailable: true,
         },
         {
             id: 'dtv',
@@ -142,6 +175,7 @@
             icon: 'icons/dtv.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/dtv.2.apk',
+            isAvailable: true,
         },
         {
             id: 'Lm tv',
@@ -150,6 +184,7 @@
             icon: 'icons/lm.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/LM.ATV.-.1.0.4.apk',
+            isAvailable: true,
         },
         {
             id: 'Ott tv',
@@ -158,6 +193,7 @@
             icon: 'icons/ott.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/ottnav.apk',
+            isAvailable: true,
         },
         {
             id: 'playfy',
@@ -166,6 +202,7 @@
             icon: 'icons/playfly.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/playfy.tv_v1.2_opt.apk',
+            isAvailable: true,
         },
         {
             id: 'playpelis',
@@ -174,6 +211,7 @@
             icon: 'icons/playpelis.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayPelis+.1.4.8.apk',
+            isAvailable: true,
         },
         {
             id: 'Rb',
@@ -182,6 +220,7 @@
             icon: 'icons/rbtv.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/rbtv77_tv-box_v3.apk',
+            isAvailable: true,
         },
         {
             id: 'tvonline',
@@ -190,6 +229,7 @@
             icon: 'icons/tvonline.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TVONLINE1.apk',
+            isAvailable: true,
         },
         {
             id: 'Vertex',
@@ -198,6 +238,7 @@
             icon: 'icons/vertex.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Vertex.TV+.PRO.apk',
+            isAvailable: true,
         },
         {
             id: 'Tv Clasica',
@@ -206,6 +247,7 @@
             icon: 'icons/clasica.png',
             description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',
             downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TV.CLASICA.100.apk',
+            isAvailable: true,
         },
     ];
 
@@ -225,12 +267,21 @@
     const App = () => {
         const [modalVisible, setModalVisible] = useState(false);
         const [selectedApp, setSelectedApp] = useState(null);
-        // Se eliminaron los estados de la reseña de IA: isLoadingReview y generatedReview
-        const [searchTerm, setSearchTerm] = useState(''); // Estado para el buscador
+        const [searchTerm, setSearchTerm] = useState(''); 
         
-        // 2. NUEVOS ESTADOS para el control de la versión de la App Store
+        // ESTADOS DE ACTUALIZACIÓN
         const [appVersion, setAppVersion] = useState("0.0"); 
         const [updateModalVisible, setUpdateModalVisible] = useState(false); 
+
+        // ESTADOS AÑADIDOS PARA EL MODAL DE INDISPONIBILIDAD
+        const [unavailableModalVisible, setUnavailableModalVisible] = useState(false); 
+        const [unavailableAppName, setUnavailableAppName] = useState(''); 
+
+        // NUEVOS ESTADOS DE ADULTOS
+        const [isAdultAccessGranted, setIsAdultAccessGranted] = useState(false); 
+        const [showPasswordModal, setShowPasswordModal] = useState(false); 
+        const [passwordInput, setPasswordInput] = useState(''); 
+        const [passwordError, setPasswordError] = useState(false); 
 
         // 3. EFECTO para verificar la versión al cargar la App Store
         useEffect(() => {
@@ -238,15 +289,19 @@
                 const currentVersion = window.AndroidInterface.getAppVersion();
                 setAppVersion(currentVersion);
                 
-                // Comparación simple de cadenas (funciona para "1.0" vs "1.1")
+                // COMPARACIÓN DE VERSIONES SIMPLE (por cadena)
                 if (currentVersion < GlobalConfig.requiredAppVersion) {
                     setUpdateModalVisible(true);
                 }
             }
         }, []); 
         
-        // Lógica de filtrado de aplicaciones para el buscador
-        const filteredApps = apps.filter(app =>
+        // Filtrado de apps
+        const normalApps = apps.filter(app => app.category !== 'adult');
+        const adultApps = apps.filter(app => app.category === 'adult');
+
+        // Lógica de filtrado de aplicaciones para el buscador (solo en apps normales)
+        const filteredApps = normalApps.filter(app =>
             app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             app.publisher.toLowerCase().includes(searchTerm.toLowerCase()) ||
             app.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -262,20 +317,53 @@
             setSelectedApp(null);
         };
 
-        const handleDownload = (url) => {
-            if (window.AndroidInterface && typeof window.AndroidInterface.startDownload === 'function') {
-                window.AndroidInterface.startDownload(url);
-            } else {
-                window.open(url, '_blank');
-            }
-            // Si es una descarga de la App Store, cerramos el modal de actualización
-            if (url === GlobalConfig.updateDownloadUrl) {
+        // FUNCIÓN MODIFICADA: Si no está disponible, muestra el nuevo modal.
+        const handleDownload = (app) => { 
+            // 1. Verificar si es la actualización de la App Store
+            if (app.downloadUrl === GlobalConfig.updateDownloadUrl) {
+                if (window.AndroidInterface && typeof window.AndroidInterface.startDownload === 'function') {
+                    window.AndroidInterface.startDownload(app.downloadUrl);
+                } else {
+                    window.open(app.downloadUrl, '_blank');
+                }
                 setUpdateModalVisible(false);
+                closeModal();
+                return; 
             }
-            closeModal();
+
+            // 2. Lógica para aplicaciones normales: Comprobar disponibilidad
+            const isAvailable = app.isAvailable === undefined ? true : app.isAvailable;
+            
+            if (isAvailable && app.downloadUrl) {
+                // La app está disponible y tiene URL, iniciar descarga
+                if (window.AndroidInterface && typeof window.AndroidInterface.startDownload === 'function') {
+                    window.AndroidInterface.startDownload(app.downloadUrl);
+                } else {
+                    window.open(app.downloadUrl, '_blank');
+                }
+            } else {
+                // La app NO está disponible, mostrar el MODAL
+                setUnavailableAppName(app.name);
+                setUnavailableModalVisible(true);
+            }
+
+            // El modal de detalles solo se cierra si la app estaba disponible o es la actualización
+            if (isAvailable || app.downloadUrl === GlobalConfig.updateDownloadUrl) {
+                closeModal();
+            }
         };
-        
-        // La función generateAppReview fue eliminada.
+
+        // FUNCIÓN: Manejar el envío de la contraseña de Adultos
+        const handlePasswordSubmit = () => {
+            if (passwordInput === GlobalConfig.adultPassword) {
+                setIsAdultAccessGranted(true);
+                setShowPasswordModal(false);
+                setPasswordInput('');
+                setPasswordError(false);
+            } else {
+                setPasswordError(true);
+            }
+        };
 
         return (
             <div className="p-8 pb-16 min-h-screen">
@@ -296,16 +384,15 @@
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
-                    {/* ------------------------- */}
+                    {/* El BOTÓN DE PRUEBA DE MENSAJE fue eliminado. */}
                 </header>
 
-                {/* --- SECCIÓN DESTACADAS OCULTA AL BUSCAR --- */}
+                {/* 1. SECCIÓN DESTACADAS OCULTA AL BUSCAR */}
                 {searchTerm === '' && (
                     <section className="mb-10">
                         <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
-                        {/* La sección destacadas se mantiene sin filtro de búsqueda */}
                         <div className="app-container flex overflow-x-auto space-x-6 pb-4">
-                            {apps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
+                            {normalApps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
                                 <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
                             ))}
                         </div>
@@ -313,11 +400,12 @@
                 )}
                 {/* ------------------------------------------- */}
 
+                {/* 2. SECCIÓN PRINCIPAL DE APLICACIONES / RESULTADOS DE BÚSQUEDA */}
                 <section>
                     <h2 className="text-2xl font-bold mb-4 ml-2">
                         {searchTerm === '' ? 'Aplicaciones' : `Resultados para "${searchTerm}"`}
                     </h2>
-                    {/* Se usa filteredApps para mostrar las aplicaciones */}
+                    {/* Se usa filteredApps (solo apps normales) */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
                         {filteredApps.length > 0 ? (
                             filteredApps.map(app => (
@@ -332,6 +420,43 @@
                         )}
                     </div>
                 </section>
+                {/* ------------------------------------------- */}
+                
+                {/* 3. SECCIÓN ADULTOS (MOVIDA AL FINAL) */}
+                {searchTerm === '' && (
+                    <section className="mb-10">
+                        <h2 className="text-2xl font-bold mb-4 ml-2 flex items-center">
+                            Contenido Adultos 🔞
+                            {!isAdultAccessGranted && (
+                                <span 
+                                    onClick={() => setShowPasswordModal(true)}
+                                    className="ml-4 text-sm text-red-400 cursor-pointer hover:text-red-300 transition-colors"
+                                >
+                                    (Bloqueado. Clic para desbloquear)
+                                </span>
+                            )}
+                        </h2>
+                        
+                        {isAdultAccessGranted ? (
+                            // Muestra las aplicaciones si el acceso está concedido
+                            <div className="app-container flex overflow-x-auto space-x-6 pb-4">
+                                {adultApps.map(app => (
+                                    <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
+                                ))}
+                            </div>
+                        ) : (
+                            // Muestra el mensaje de bloqueo si no hay acceso
+                            <div 
+                                className="bg-gray-800 rounded-3xl p-10 text-center cursor-pointer transition-all duration-200 hover:bg-gray-700"
+                                onClick={() => setShowPasswordModal(true)}
+                            >
+                                <p className="text-xl text-red-500 font-semibold mb-2">Acceso Restringido 🔒</p>
+                                <p className="text-gray-400">Introduce la contraseña para ver este contenido.</p>
+                            </div>
+                        )}
+                    </section>
+                )}
+                {/* ------------------------------------- */}
 
                 {/* Modal de detalles de la aplicación */}
                 {modalVisible && selectedApp && (
@@ -350,19 +475,18 @@
                                     <p className="text-gray-400 mb-4">{selectedApp.publisher}</p>
                                     <p className="text-gray-300 text-sm leading-relaxed mb-6">{selectedApp.description}</p>
                                     <button
-                                        onClick={() => handleDownload(selectedApp.downloadUrl)}
+                                        onClick={() => handleDownload(selectedApp)}
                                         className="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
                                     >
                                         Descargar
                                     </button>
-                                    {/* La sección de reseña de IA fue eliminada */}
                                 </div>
                             </div>
                         </div>
                     </div>
                 )}
                 
-                {/* 4. Modal de Notificación de Actualización de la App Store */}
+                {/* Modal de Notificación de Actualización de la App Store */}
                 {updateModalVisible && (
                     <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
                         <div className="bg-purple-900 rounded-3xl p-10 max-w-lg w-full shadow-2xl relative border-4 border-purple-500">
@@ -377,7 +501,7 @@
                             </p>
                             <div className="flex flex-col space-y-4">
                                 <button
-                                    onClick={() => handleDownload(GlobalConfig.updateDownloadUrl)}
+                                    onClick={() => handleDownload({downloadUrl: GlobalConfig.updateDownloadUrl, name: "App Store"})}
                                     className="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
                                 >
                                     Descargar Versión {GlobalConfig.requiredAppVersion}
@@ -395,6 +519,79 @@
                         </div>
                     </div>
                 )}
+
+                {/* --- NUEVO MODAL: Contraseña de Adultos --- */}
+                {showPasswordModal && (
+                    <div className="fixed inset-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-center p-8 z-50">
+                        <div className="bg-gray-800 rounded-3xl p-10 max-w-sm w-full shadow-2xl relative border-4 border-red-500">
+                            <button
+                                onClick={() => setShowPasswordModal(false)}
+                                className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold"
+                            >
+                                &times;
+                            </button>
+                            <h3 className="text-3xl font-extrabold text-red-500 mb-4 text-center">
+                                Acceso a Contenido Adulto
+                            </h3>
+                            <p className="text-gray-300 text-center mb-6">
+                                Por favor, introduce la contraseña para continuar.
+                            </p>
+                            <input
+                                type="password"
+                                className={`w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 border-2 ${passwordError ? 'border-red-500' : 'border-gray-600'} focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-150 mb-4`}
+                                placeholder="Contraseña..."
+                                value={passwordInput}
+                                onChange={(e) => {
+                                    setPasswordInput(e.target.value);
+                                    setPasswordError(false);
+                                }}
+                                onKeyPress={(e) => {
+                                    if (e.key === 'Enter') handlePasswordSubmit();
+                                }}
+                            />
+                            {passwordError && (
+                                <p className="text-sm text-red-400 mb-4 text-center">Contraseña incorrecta. Intenta de nuevo.</p>
+                            )}
+                            <button
+                                onClick={handlePasswordSubmit}
+                                className="w-full bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                            >
+                                Desbloquear
+                            </button>
+                        </div>
+                    </div>
+                )}
+                
+                {/* 🛑 NUEVO MODAL: Aplicación No Disponible */}
+                {unavailableModalVisible && (
+                    <div className="fixed inset-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-center p-8 z-50">
+                        <div className="bg-red-900 rounded-3xl p-10 max-w-md w-full shadow-2xl relative border-4 border-red-500">
+                            <button
+                                onClick={() => setUnavailableModalVisible(false)}
+                                className="absolute top-4 right-4 text-gray-300 hover:text-white text-3xl font-bold"
+                            >
+                                &times;
+                            </button>
+                            <h3 className="text-3xl font-extrabold text-white mb-4 text-center">
+                                App No Disponible ⚠️
+                            </h3>
+                            <p className="text-gray-200 text-lg mb-6 text-center">
+                                Lamentamos informarte que **{unavailableAppName}** no está disponible para descarga en este momento.
+                            </p>
+                            <p className="text-gray-300 text-base leading-relaxed mb-8 text-center">
+                                Por favor, inténtalo más tarde. Estamos trabajando para reestablecer el servicio.
+                            </p>
+                            <button
+                                onClick={() => setUnavailableModalVisible(false)}
+                                autoFocus // Esto asegura que el foco esté en el botón para controles remotos
+                                className="w-full bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                            >
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                )}
+                {/* ------------------------------------- */}
             </div>
         );
     };
