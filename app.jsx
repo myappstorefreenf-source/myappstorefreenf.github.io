@@ -251,7 +251,7 @@ const SuggestionModal = ({ isVisible, onClose, formUrl }) => {
                 </div>
 
                 <p className="text-gray-400 text-sm break-words text-center mb-6">
-                    Si el QR no funciona, introduce esta URL manualmente:<br/>
+                    Si el QR no funciona, haz clic en el siguiente link :<br/>
                     <a 
                         href={formUrl} 
                         target="_blank" 
@@ -622,3 +622,4 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
