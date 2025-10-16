@@ -16,7 +16,7 @@ const GlobalConfig = {
     // CONFIGURACIÓN: CONTRASEÑA DE ADULTOS (¡CÁMBIALA!)
     adultPassword: "1234",     
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
-  //  suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
+    suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
 };
 
 // ***************************************************************
@@ -622,4 +622,5 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
