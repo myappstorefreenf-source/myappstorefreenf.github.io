@@ -1,0 +1,25 @@
+body {
+    font-family: 'Inter', sans-serif;
+    /* ASEGÚRATE QUE 'mi_banner_tv.png' EXISTA */
+    background-image: 
+        linear-gradient(to bottom, rgba(26, 10, 10, 0.7), rgba(26, 10, 10, 0.7)),
+        url('mi_banner_tv.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #E0E0E0;
+}
+.app-container::-webkit-scrollbar {
+    display: none;
+}
+.app-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* Animación de carga */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
