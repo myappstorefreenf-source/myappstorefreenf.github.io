@@ -6,11 +6,11 @@ const { createRoot } = ReactDOM;
 // ***************************************************************
 const GlobalConfig = {
     // La versión que deberían tener los usuarios (DEBE COINCIDIR con el versionName en build.gradle)
-    requiredAppVersion: "1.1",                 
+    requiredAppVersion: "1.2",                 
     // El mensaje que verán los usuarios
     updateMessage: "Descarga la nueva versión de la App Store para obtener nuevas funciones, mejoras de estabilidad y acceso a nuevas apps.",                
     // URL para descargar el NUEVO APK de la App Store (modifica este enlace)
-    updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/V1.1.apk",                
+    updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/V1.2.apk",                
     // Si es una actualización OBLIGATORIA (true: el botón 'Más tarde' desaparece)
     isForced: false,                
     // CONFIGURACIÓN: CONTRASEÑA DE ADULTOS (¡CÁMBIALA!)
@@ -622,5 +622,6 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
