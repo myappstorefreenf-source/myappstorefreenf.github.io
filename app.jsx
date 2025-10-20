@@ -49,7 +49,7 @@ const apps = [
         description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Primera división brasileña Football League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup,  y otros eventos en vivo.',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk',            
         isAvailable: true,        
-    },        
+    },
     {            
         id: 'Projectivy launcher',            
         name: 'PROJECTIVY LAUNCHER',            
@@ -60,6 +60,34 @@ const apps = [
         isAvailable: true,        
     },        
     {            
+        id: 'teo',            
+        name: 'Teo Plus',            
+        publisher: 'teo plus',            
+            icon: 'icons/teo.png',            
+        description: 'Mira tus peliculas favoritas,series y los ultimos estrenos todo desde un mismo lugar.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TEO.PLUS.apk',            
+        isAvailable: true,        
+    },
+     {            
+        id: 'xp',            
+        name: 'Xp Player',            
+        publisher: 'Xp player',            
+            icon: 'icons/xp.png',            
+        description: 'Disfruta de todo el contenido multimedia que te ofrece esta aplicacion.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/XP.Player.apk',            
+        isAvailable: true,        
+    },
+     {            
+        id: 'Magma',            
+        name: 'Magma',            
+        publisher: 'Magma',            
+            icon: 'icons/magma.png',            
+        description: 'Magma es un reproductor de listas m3u, requiere una minima configuracion inicial, al pedirte los datos ingresa servidor:http://magmaplayer.com/ usuario: m contraseña: m y disfruta de todo el contenido .',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Magma.1.0.9.apk',            
+        isAvailable: true,        
+    },        
+    
+    {            
         id: 'mgt',            
         name: 'Magis TV',            
         publisher: 'MagisTV',            
@@ -67,7 +95,8 @@ const apps = [
         description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
         downloadUrl: 'https://www.magistv-pc.app/descargar/magis-video.apk',            
         isAvailable: true,        
-    },        
+    }, 
+    
     {            
         id: 'Smartube',            
         name: 'Smartube',            
@@ -622,6 +651,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
