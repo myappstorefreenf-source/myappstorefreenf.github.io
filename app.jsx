@@ -68,6 +68,15 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TEO.PLUS.apk',            
         isAvailable: true,        
     },
+    {            
+        id: 'infinity',            
+        name: 'Infinitys Life',            
+        publisher: 'Infinitys',            
+            icon: 'icons/teo.png',            
+        description: 'Mira tus peliculas favoritas,series y los ultimos estrenos todo desde un mismo lugar.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/INFINITY.apk',            
+        isAvailable: true,        
+    },
      {            
         id: 'xp',            
         name: 'Xp Player',            
@@ -127,12 +136,12 @@ const apps = [
         isAvailable: true,        
     },        
     {            
-        id: 'Adultfun',            
-        name: 'Adultos 2',            
+        id: 'Eroflix',            
+        name: 'Eroflix',            
         publisher: 'Adultos',            
-        icon: 'icons/adult.png', // Asume que tienes este icono            
+        icon: 'icons/erotic.png', // Asume que tienes este icono            
         description: '',            
-        downloadUrl: 'https://ejemplo.com/tube-night.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Eroflix.apk',            
         category: 'adult',            
         isAvailable: false,        
     },        
@@ -651,6 +660,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
