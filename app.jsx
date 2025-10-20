@@ -72,7 +72,7 @@ const apps = [
         id: 'infinity',            
         name: 'Infinitys Life',            
         publisher: 'Infinitys',            
-            icon: 'icons/teo.png',            
+            icon: 'icons/infinity.png',            
         description: 'Mira tus peliculas favoritas,series y los ultimos estrenos todo desde un mismo lugar.',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/INFINITY.apk',            
         isAvailable: true,        
@@ -660,6 +660,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
