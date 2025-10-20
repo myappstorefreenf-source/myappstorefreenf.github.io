@@ -5,7 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My appStore</title>
+     <script>
+document.addEventListener('contextmenu', function(e) {
+    // Esto evita que se muestre el menú contextual (el menú del clic derecho)
+    e.preventDefault(); 
+});
+
+document.onkeydown = function(e) {
+    const targetURL = "pagina-de-aviso.html";
+
+    // Evaluar la tecla presionada en minúscula para ser más consistente
+    const keyPressed = e.key.toLowerCase(); 
     
+    // **1. Bloquear Ctrl + U (Ver código fuente)**
+    if (e.ctrlKey && keyPressed === 'u') {
+        e.preventDefault();
+        window.location.replace(targetURL);
+        return false; // Detiene la ejecución
+    }
+
+    // **2. Bloquear Ctrl + Shift + I (Herramientas de Desarrollador)**
+    if (e.ctrlKey && e.shiftKey && keyPressed === 'i') {
+        e.preventDefault();
+        window.location.replace(targetURL);
+        return false;
+    }
+
+    // **3. Bloquear F12 (Herramientas de Desarrollador)**
+    if (e.key === 'F12') {
+        e.preventDefault();
+        window.location.replace(targetURL);
+        return false;
+    }
+};
+;</script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="styles.css"> 
