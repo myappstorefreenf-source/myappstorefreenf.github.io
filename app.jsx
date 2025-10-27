@@ -213,7 +213,7 @@ const apps = [
         id: 'FCtv',            
         name: 'Fc tv',            
         publisher: 'FcTv',            
-        icon: 'icons/fctv.png',            
+        icon: 'icons/fctv.PNG',            
         description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/FCTV33.TV.3.0.309.apk',            
         isAvailable: true,        
@@ -669,6 +669,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
