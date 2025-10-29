@@ -102,7 +102,7 @@ const apps = [
         publisher: 'MagisTV',            
         icon: 'icons/magistv.png',            
         description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
-        downloadUrl: 'https://www.magistv-pc.app/descargar/magis-video.apk',            
+        downloadUrl: 'https://www.xupertv.com/app/XPR_oficial.apk',            
         isAvailable: true,        
     }, 
     
@@ -669,6 +669,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
