@@ -101,7 +101,7 @@ const apps = [
         name: 'Magis TV',            
         publisher: 'MagisTV',            
         icon: 'icons/magistv.png',            
-        description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
+        description: '¡¡¡Ahora magisttv se llama Xupertv!!!Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
         downloadUrl: 'https://www.xupertv.com/app/XPR_oficial.apk',            
         isAvailable: true,        
     }, 
@@ -669,6 +669,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
