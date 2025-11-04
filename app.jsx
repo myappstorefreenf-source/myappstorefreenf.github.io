@@ -40,6 +40,15 @@ const apps = [
         description: 'SFTV es una sencilla aplicación para conectar tu Smart TV Android, tu dispositivo móvil Android y tu ordenador. Te permite compartir películas, programas de televisión o cualquier archivo entre estos dispositivos de forma rápida y sencilla a través de tu red local.No requiere internet.' ,            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm',            
         isAvailable: false, // ¡Marcada como NO DISPONIBLE para la prueba!        
+    },
+      {            
+        id: 'teleapp',            
+        name: 'TeleApp',            
+        publisher: 'TeleappT.',            
+        icon: 'icons/teleapp.png',            
+        description: 'Tele App, mira todos los canales desde esta sencilla y practica app, selecciona por pais o provincia para todos los canales nacionales' ,            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/tele.apk',            
+        isAvailable: false, // ¡Marcada como NO DISPONIBLE para la prueba!        
     },        
     {            
         id: 'MPLUS2',            
@@ -669,6 +678,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
