@@ -48,7 +48,7 @@ const apps = [
         icon: 'icons/teleapp.PNG',            
         description: 'Tele App, mira todos los canales desde esta sencilla y practica app, selecciona por pais o provincia para todos los canales nacionales' ,            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/tele.apk',            
-        isAvailable: false, // ¡Marcada como NO DISPONIBLE para la prueba!        
+        isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
     },        
     {            
         id: 'MPLUS2',            
