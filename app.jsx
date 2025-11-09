@@ -29,7 +29,7 @@ const apps = [
         publisher: 'WorldTv',            
         icon: 'icons/worldtv.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_3_2.0.7-1.1.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_3.0.8.apk',            
         isAvailable: true, // Disponible        
     },        
     {            
@@ -678,6 +678,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
