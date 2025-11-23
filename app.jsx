@@ -29,7 +29,16 @@ const apps = [
         publisher: 'WorldTv',            
         icon: 'icons/worldtv.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_3.0.8.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TelePlay.WorldTV2.100.apk',            
+        isAvailable: true, // Disponible        
+    },
+    {            
+        id: 'playteve',            
+        name: 'Play Teve',            
+        publisher: 'Play teve',            
+        icon: 'icons/playteve.png',            
+        description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Play.TV.Premium.Mod3.apk',            
         isAvailable: true, // Disponible        
     },        
     {            
@@ -251,7 +260,7 @@ const apps = [
         publisher: 'Tv clasica',            
         icon: 'icons/clasica.png',            
         description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TV.CLASICA.100.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TV.CLASICA.100-1.apk',            
         isAvailable: true,        
     },    
 ];
@@ -678,6 +687,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
