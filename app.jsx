@@ -69,6 +69,15 @@ const apps = [
         isAvailable: true,        
     },
     {            
+        id: 'M3u IPTV',            
+        name: 'M3u IPTV',            
+        publisher: 'M3u.',            
+        icon: 'icons/m3u.png',            
+        description: 'Un potente reproductor de listas m3u en el link https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8 adjunto podran descargar la lista para complementar con esta app',            
+        downloadUrl: 'https://m3u-ip.com/latest-android.apk',            
+        isAvailable: true,        
+    },
+    {            
         id: 'Projectivy launcher',            
         name: 'PROJECTIVY LAUNCHER',            
         publisher: 'projectivy launcher',            
@@ -224,7 +233,7 @@ const apps = [
         publisher: 'Rb tv',            
         icon: 'icons/rbtv.png',            
         description: 'Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/RBTV+.TV.3.0.309.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/RBTV+.TV.3.0.314.apk',            
         isAvailable: true,        
     },
     {            
@@ -687,6 +696,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
