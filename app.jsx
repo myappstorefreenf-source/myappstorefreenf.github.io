@@ -50,6 +50,33 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/sftv.apkm',            
         isAvailable: false, // ¡Marcada como NO DISPONIBLE para la prueba!        
     },
+     {            
+        id: 'Player pro',            
+        name: 'Player pro',            
+        publisher: 'Player pro.',            
+        icon: 'icons/playerpro.png',            
+        description: 'Disfruta de ciento de canales, series y peliculs todo desde una misma app,IMPORTABTE al iniciar la app solicita por uni vez servidor: plpro.org contraseña: p usuario :p ' ,            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Player.Pro.apk',            
+        isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
+    },
+    {            
+        id: 'Var Sport',            
+        name: 'Var Sport',            
+        publisher: 'Var Sport',            
+        icon: 'icons/varsport.PNG',            
+        description: 'Disfruta de todo el deporte con esta increible app' ,            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/VAR.Sports.1.1.apk',            
+        isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
+    },
+     {            
+        id: 'Proton vpv',            
+        name: 'Proton vpn',            
+        publisher: 'Proton vpn',            
+        icon: 'icons/protonvpn.PNG',            
+        description: 'Oculta todo el trafico de tu red con esta potente VPN' ,            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/ProtonVPN-5.15.7.apk',            
+        isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
+    },
       {            
         id: 'teleapp',            
         name: 'TeleApp',            
@@ -696,6 +723,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
