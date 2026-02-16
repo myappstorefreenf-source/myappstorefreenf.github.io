@@ -100,10 +100,23 @@ const apps = [
         name: 'M3u IPTV',            
         publisher: 'M3u.',            
         icon: 'icons/m3u.png',            
-        description: 'Un potente reproductor de listas m3u en el link https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8 adjunto podran descargar la lista para complementar con esta app',            
-        downloadUrl: 'https://m3u-ip.com/latest-android.apk',            
+        description: 'Un potente reproductor de listas m3u en el link  adjunto podran descargar la lista para complementar con esta app',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8', 
         isAvailable: true,        
     },
+    {            
+        id: 'Listasm3u',            
+        name: 'Lista',            
+        publisher: 'Lista sensa',            
+            icon: 'icons/lista.png',            
+        description: 'Senasa tv',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8',
+         description: 'Senasa v4',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V4.m3u',
+         description: 'Senasa v5',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.m3u',
+        isAvailable: true,        
+    },        
     {            
         id: 'Projectivy launcher',            
         name: 'PROJECTIVY LAUNCHER',            
@@ -723,6 +736,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
