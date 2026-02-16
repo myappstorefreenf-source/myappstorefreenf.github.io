@@ -594,34 +594,58 @@ const App = () => {
                 formUrl={GlobalConfig.suggestionFormUrl}
             />
 
-            {/* MODAL: Detalles de la aplicación */}
-            {modalVisible && selectedApp && (
-                <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
-                    <div className="bg-gray-800 rounded-3xl p-8 max-w-2xl w-full shadow-2xl relative">
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold"
-                        >
-                            &times;
-                        </button>
-                        <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
-                            <img src={selectedApp.icon} alt="Icono de la aplicación" className="w-24 h-24 rounded-2xl shadow-xl"/>
-                            <div className="text-center md:text-left">
-                                <h3 className="text-4xl font-extrabold mb-2 text-white">{selectedApp.name}</h3>
-                                <p className="text-gray-400 mb-4">{selectedApp.publisher}</p>
-                                <p className="text-gray-300 text-sm leading-relaxed mb-6">{selectedApp.description}</p>
+           {/* MODAL: Detalles de la aplicación */}
+{modalVisible && selectedApp && (
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
+        <div className="bg-gray-800 rounded-3xl p-8 max-w-2xl w-full shadow-2xl relative">
+            <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold"
+            >
+                &times;
+            </button>
+            <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                <img src={selectedApp.icon} alt="Icono de la aplicación" className="w-24 h-24 rounded-2xl shadow-xl"/>
+                <div className="text-center md:text-left w-full">
+                    <h3 className="text-4xl font-extrabold mb-2 text-white">{selectedApp.name}</h3>
+                    <p className="text-gray-400 mb-4">{selectedApp.publisher}</p>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-6">{selectedApp.description}</p>
+                    
+                    {/* --- LÓGICA DE BOTONES DINÁMICOS --- */}
+                    <div className="flex flex-col space-y-3">
+                        {selectedApp.downloads ? (
+                            // Si existen varias opciones (Pack Sensa)
+                            selectedApp.downloads.map((item, index) => (
                                 <button
-                                    onClick={() => handleDownload(selectedApp)}
-                                    className="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
+                                    key={index}
+                                    onClick={() => handleDownload({ downloadUrl: item.url, name: item.label })}
+                                    className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 flex justify-between items-center"
                                 >
-                                    Descargar
+                                    <span>Descargar {item.label}</span>
+                                    <span className="text-xs bg-black bg-opacity-20 px-2 py-1 rounded-full">M3U</span>
                                 </button>
-                            </div>
-                        </div>
+                            ))
+                        ) : (
+                            // Si es una descarga única (Apps normales)
+                            <button
+                                onClick={() => selectedApp.isAvailable && handleDownload(selectedApp)}
+                                className={`${
+                                    selectedApp.isAvailable 
+                                    ? 'bg-green-500 hover:bg-green-600 transform hover:scale-105 shadow-lg' 
+                                    : 'bg-gray-600 cursor-not-allowed'
+                                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300`}
+                                disabled={!selectedApp.isAvailable}
+                            >
+                                {selectedApp.isAvailable ? 'Descargar APK' : 'No Disponible'}
+                            </button>
+                        )}
                     </div>
+                    {/* --- FIN LÓGICA --- */}
                 </div>
-            )}                                
-
+            </div>
+        </div>
+    </div>
+)}
             {/* MODAL: Notificación de Actualización de la App Store */}
             {updateModalVisible && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
@@ -737,6 +761,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
