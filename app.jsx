@@ -104,19 +104,20 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8', 
         isAvailable: true,        
     },
-    {            
-        id: 'Listasm3u',            
-        name: 'Lista',            
-        publisher: 'Lista sensa',            
-            icon: 'icons/lista.png',            
-        description: 'Senasa tv',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8',
-         description: 'Senasa v4',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V4.m3u',
-         description: 'Senasa v5',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.m3u',
-        isAvailable: true,        
-    },        
+   {
+    id: 'sensa-apps',
+    name: 'LISTAS SENSA TV PACK',
+    publisher: 'Sensa',
+    icon: 'icons/lista.png',
+    description: 'Pack de listas Sensa para Android TV.',
+    // Agrupamos todas las versiones aquí
+    downloads: [
+        { label: 'Sensa TV', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8'' },
+        { label: 'Sensa TV v4', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V4.m3u' },
+        { label: 'Sensa TV v5', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.m3u' }
+    ],
+    isAvailable: true,
+},
     {            
         id: 'Projectivy launcher',            
         name: 'PROJECTIVY LAUNCHER',            
@@ -736,6 +737,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
