@@ -112,8 +112,9 @@ const apps = [
     description: 'Pack de listas Sensa para Android TV.',
     downloads: [
         { label: 'Sensa TV', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u' },
-        { label: 'Sensa TV v4', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V4.m3u' },
-        { label: 'Sensa TV v5', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.m3u' }
+        { label: 'Sensa TV v4', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V4.lilac01.m3u' },
+        { label: 'Sensa TV v5', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.mplus.m3u' },
+        { label: 'TV hoy', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TvHoy20s_.m3u' }
     ],
     isAvailable: true,
 },
@@ -761,6 +762,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
