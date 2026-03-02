@@ -59,6 +59,15 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Player.Pro.apk',            
         isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
     },
+     {            
+        id: '410',            
+        name: '410',            
+        publisher: '410',            
+        icon: 'icons/410.png',            
+        description: 'Disfruta de ciento de canales, series y peliculs todo desde una misma app,IMPORTABTE al iniciar la app solicita por uni vez servidor: plpro.org contraseña: p usuario :p ' ,            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/410.apk',            
+        isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
+    },
     {            
         id: 'Var Sport',            
         name: 'Var Sport',            
@@ -175,7 +184,7 @@ const apps = [
         icon: 'icons/magistv.png',            
         description: '¡¡¡Ahora magisttv se llama Xupertv!!!Mira cientos de canales en vivos, disfruta de tus series y peliculas favoritas, todo desde una misma app.',            
         downloadUrl: 'https://www.xupertv.com/app/XPR_oficial1.apk',            
-        isAvailable: true,        
+        isAvailable: false,        
     }, 
     
     {            
@@ -765,6 +774,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
