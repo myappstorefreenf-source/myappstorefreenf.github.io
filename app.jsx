@@ -25,11 +25,11 @@ const GlobalConfig = {
 const apps = [
     {            
         id: 'Worldtv',            
-        name: 'worldtv',            
+        name: 'worldtv v2.101',            
         publisher: 'WorldTv',            
         icon: 'icons/worldtv.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TelePlay.WorldTV2.100.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_101.apk',            
         isAvailable: true, // Disponible        
     },
     {            
@@ -775,6 +775,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
