@@ -127,6 +127,7 @@ const apps = [
         { label: 'Listatv1', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/listaTv1.m3u' },
         { label: 'LPF_ARG', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/LPF_ARG.1.m3u' },
         { label: 'Sensaarg.2', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Sensaarg.2.m3u' },
+         { label: 'Lista001', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/lista001.m3u' },
     ],
     isAvailable: true,
 },
@@ -774,6 +775,7 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
+
 
 
 
