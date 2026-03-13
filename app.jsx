@@ -443,7 +443,16 @@ const App = () => {
             }
         }
     }, []);                 
-    
+    // Este efecto detecta si algún modal está abierto y congela el fondo
+useEffect(() => {
+    if (modalVisible || showSuggestionModal || updateModalVisible || showPasswordModal || unavailableModalVisible) {
+        // Bloquea el scroll
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Habilita el scroll de nuevo cuando cierras el modal
+        document.body.style.overflow = 'unset';
+    }
+}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible]);
     // --- LÓGICA DE FILTRADO Y MANEJO DE ESTADOS ---
     const normalApps = apps.filter(app => app.category !== 'adult');
     const adultApps = apps.filter(app => app.category === 'adult');
@@ -612,11 +621,13 @@ const App = () => {
 {modalVisible && selectedApp && (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-center p-8 z-50">
         <div className="bg-gray-800 rounded-3xl p-8 max-w-2xl w-full shadow-2xl relative">
-            <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold"
-            >
-                &times;
+           <button
+    onClick={closeModal}
+    autoFocus // <--- Esto hace que el control remoto "salte" aquí al abrirse
+    className="absolute top-4 right-4 text-gray-400 hover:text-white focus:text-white focus:bg-gray-700 focus:ring-4 focus:ring-white rounded-full w-12 h-12 flex items-center justify-center text-3xl font-bold transition-all outline-none"
+>
+    &times;
+
             </button>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
                 <img src={selectedApp.icon} alt="Icono de la aplicación" className="w-24 h-24 rounded-2xl shadow-xl"/>
@@ -775,7 +786,6 @@ const App = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(<App />);
-
 
 
 
