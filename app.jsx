@@ -639,30 +639,32 @@ useEffect(() => {
                     {/* --- LÓGICA DE BOTONES DINÁMICOS --- */}
                     <div className="flex flex-col space-y-3">
                         {selectedApp.downloads ? (
-                            // Si existen varias opciones (Pack Sensa)
-                            selectedApp.downloads.map((item, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleDownload({ downloadUrl: item.url, name: item.label })}
-                                    className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 flex justify-between items-center"
-                                >
-                                    <span>Descargar {item.label}</span>
-                                    <span className="text-xs bg-black bg-opacity-20 px-2 py-1 rounded-full">M3U</span>
-                                </button>
-                            ))
+                           // Si existen varias opciones (Pack Sensa)
+selectedApp.downloads.map((item, index) => (
+    <button
+        key={index}
+        onClick={() => handleDownload({ downloadUrl: item.url, name: item.label })}
+        // Añadimos focus:bg-blue-500, focus:ring y focus:scale
+        className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 focus:bg-blue-500 focus:ring-4 focus:ring-white focus:scale-105 transition-all duration-300 transform flex justify-between items-center outline-none"
+    >
+        <span>Descargar {item.label}</span>
+        <span className="text-xs bg-black bg-opacity-20 px-2 py-1 rounded-full ml-2">M3U</span>
+    </button>
+))
+                          
                         ) : (
                             // Si es una descarga única (Apps normales)
-                            <button
-                                onClick={() => selectedApp.isAvailable && handleDownload(selectedApp)}
-                                className={`${
-                                    selectedApp.isAvailable 
-                                    ? 'bg-green-500 hover:bg-green-600 transform hover:scale-105 shadow-lg' 
-                                    : 'bg-gray-600 cursor-not-allowed'
-                                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300`}
-                                disabled={!selectedApp.isAvailable}
-                            >
-                                {selectedApp.isAvailable ? 'Descargar APK' : 'No Disponible'}
-                            </button>
+                           <button
+    onClick={() => selectedApp.isAvailable && handleDownload(selectedApp)}
+    className={`${
+        selectedApp.isAvailable 
+        ? 'bg-green-500 hover:bg-green-600 focus:bg-green-400 focus:ring-4 focus:ring-white focus:scale-105' 
+        : 'bg-gray-600 cursor-not-allowed'
+    } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 outline-none shadow-lg`}
+    disabled={!selectedApp.isAvailable}
+>
+    {selectedApp.isAvailable ? 'DESCARGAR AHORA' : 'No Disponible'}
+</button>
                         )}
                     </div>
                     {/* --- FIN LÓGICA --- */}
