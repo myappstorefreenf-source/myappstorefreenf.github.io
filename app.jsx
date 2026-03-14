@@ -38,7 +38,7 @@ const apps = [
         publisher: 'Play teve',            
         icon: 'icons/playteve.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Play.TV.Premium.Mod3.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/play.tv.v3.0.apk',            
         isAvailable: true, // Disponible        
     },        
     {            
@@ -125,13 +125,27 @@ const apps = [
         { label: 'Sensa TV v5', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.V5.mplus.m3u' },
         { label: 'TV hoy', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/TvHoy20s_.m3u' },
         { label: 'Listatv1', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/listaTv1.m3u' },
-        { label: 'LPF_ARG', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/LPF_ARG.1.m3u' },
-        { label: 'Sensaarg.2', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Sensaarg.2.m3u' },
-         { label: 'Lista001', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/lista001.m3u' },
+        
     ],
     isAvailable: true,
 },
+ {
+    id: 'lista',
+    name: 'LISTAS TV PACK',
+    publisher: 'Listas',
+    icon: 'icons/lista.png',
+    description: 'Pack de listas para Android TV.',
+    downloads: [
+       
+        { label: 'LPF_ARG', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/LPF_ARG.1.m3u' },
+        { label: 'Sensaarg.2', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Sensaarg.2.m3u' },
+         { label: 'Lista001', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/lista001.m3u' },
+                 { label: 'Lista021', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Lista02.m3u' },
+                 { label: 'Lista03', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/lista03.m3u' },
 
+    ],
+    isAvailable: true,
+},
     {            
         id: 'Projectivy launcher',            
         name: 'PROJECTIVY LAUNCHER',            
@@ -141,6 +155,7 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Projectivy.Launcher.apk',            
         isAvailable: true,        
     },        
+    
     {            
         id: 'teo',            
         name: 'Teo Plus',            
