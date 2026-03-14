@@ -73,7 +73,7 @@ const apps = [
         name: 'Canales Argentina',            
         publisher: 'Canales Argentina',            
         icon: 'icons/carg.png',            
-        description: 'Disfruta de ciento de canales, series y peliculs todo desde una misma app,IMPORTABTE al iniciar la app solicita por uni vez servidor: plpro.org contraseña: p usuario :p ' ,            
+        description: 'Disfruta de la programacion en vivo de Argentina con esta excelente app  ' ,            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/canalesdeargentina.apk',            
         isAvailable: true, // ¡Marcada como NO DISPONIBLE para la prueba!        
     },
