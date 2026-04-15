@@ -23,6 +23,28 @@ const GlobalConfig = {
 // 2. DATA DE APLICACIONES (APPS)
 // ***************************************************************
 const apps = [
+    {
+    id: 'Xuper',
+    name: 'XuperTv',
+    publisher: 'Xuper tv',
+    icon: 'icons/Xuper.png',
+    description: 'Descarga este NUevo mod de XuperTv en conjunto con su vpn, una vez descargado e instalados los dos archivos solo debes ejecutar Xuper VPN y esperar 30 seg aproximadamente para disfrutar de todo el contenido de Xuper tv.',
+    downloads: [
+        { label: 'Xuper 4.99.2', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.4.99.2.apk' },
+        { label: 'Xuper VPN', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.VPN.0.7.64.apk' },
+               
+    ],
+    isAvailable: true,
+},
+      {            
+        id: 'DeportAgenda',            
+        name: 'Deport Agenda',            
+        publisher: 'WorldTv',            
+        icon: 'icons/deportagenda.png',            
+        description: 'ofrece servicios de transmisión en vivo de los eventos deportivos mas importantes.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/APP_eventos-ofi.apk',            
+        isAvailable: true, // Disponible        
+    },
     {            
         id: 'Worldtv',            
         name: 'worldtv v2.101',            
