@@ -694,7 +694,7 @@ selectedApp.downloads.map((item, index) => (
         className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 focus:bg-blue-500 focus:ring-4 focus:ring-white focus:scale-105 transition-all duration-300 transform flex justify-between items-center outline-none"
     >
         <span>Descargar {item.label}</span>
-        <span className="text-xs bg-black bg-opacity-20 px-2 py-1 rounded-full ml-2">M3U</span>
+        <span className="text-xs bg-black bg-opacity-20 px-2 py-1 rounded-full ml-2"></span>
     </button>
 ))
                           
