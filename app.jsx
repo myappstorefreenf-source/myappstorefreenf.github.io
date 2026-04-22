@@ -45,6 +45,15 @@ const apps = [
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/APP_eventos-ofi.apk',            
         isAvailable: true, // Disponible        
     },
+     {            
+        id: 'iptv',            
+        name: 'IP tvP',            
+        publisher: 'Ip tv,            
+        icon: 'icons/iptv.png',            
+        description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/IPTV.apk',            
+        isAvailable: true, // Disponible        
+    },
     {            
         id: 'Worldtv',            
         name: 'worldtv v2.101',            
@@ -52,6 +61,15 @@ const apps = [
         icon: 'icons/worldtv.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/worldtv2_101.apk',            
+        isAvailable: true, // Disponible        
+    },
+     {            
+        id: 'chocopop',            
+        name: 'Chocopop TV',            
+        publisher: 'Chocopop TV',            
+        icon: 'icons/chocopop.png',            
+        description: 'ofrece servicios de trasmision de contenido bajo demanda.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/ChocoPopTV-Free.apk',            
         isAvailable: true, // Disponible        
     },
     {            
