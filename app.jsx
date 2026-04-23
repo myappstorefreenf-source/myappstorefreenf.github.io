@@ -36,10 +36,19 @@ const apps = [
     ],
     isAvailable: true,
 },
+     {            
+        id: 'Butaca TV',            
+        name: 'Butaca TV',            
+        publisher: 'Butaca TV',            
+        icon: 'icons/butaca.png',            
+        description: 'ofrece servicios de transmisión en vivo de los eventos deportivos mas importantes.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/APP_eventos-ofi.https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Butaca.TV.apk',            
+        isAvailable: true, // Disponible        
+    },
       {            
         id: 'DeportAgenda',            
         name: 'Deport Agenda',            
-        publisher: 'WorldTv',            
+        publisher: 'Deporte Agenda',            
         icon: 'icons/deportagenda.png',            
         description: 'ofrece servicios de transmisión en vivo de los eventos deportivos mas importantes.',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/APP_eventos-ofi.apk',            
