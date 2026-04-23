@@ -159,9 +159,22 @@ const apps = [
         publisher: 'M3u.',            
         icon: 'icons/m3u.png',            
         description: 'Un potente reproductor de listas m3u en el link  adjunto podran descargar la lista para complementar con esta app',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u8', 
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/VIP19ABRIL.m3u', 
         isAvailable: true,        
     },
+      {
+    id: 'VIP LISTA 19 ABR ',
+    name: 'LISTAS VIP',
+    publisher: 'VIP',
+    icon: 'icons/lista.png',
+    description: 'Pack de listas Sensa para Android TV.',
+    downloads: [
+        { label: 'VIP 19 Abr', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/SENSA.TV.m3u' },
+       
+        
+    ],
+    isAvailable: true,
+},
     {
     id: 'sensa-apps',
     name: 'LISTAS SENSA TV PACK',
