@@ -11,7 +11,7 @@ const GlobalConfig = {
     isForced: false,                
     adultPassword: "1234",     
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", 
-    lastStoreUpdateId: "2026-05-16", 
+    lastStoreUpdateId: "2026-05-17", 
     whatsNewMessage: "¡Hemos añadido el nuevo MOD de XuperTv con su VPN y la nueva version de Play TV!, Revísalas en la tienda."
 };
 
