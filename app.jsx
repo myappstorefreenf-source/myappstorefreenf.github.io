@@ -524,7 +524,7 @@ const WhatsNewModal = ({ isVisible, onClose, message }) => {
                 </div>
                 <button
                     onClick={onClose}
-                    autoFocus
+                   // autoFocus
                     className="w-full bg-purple-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 focus:bg-purple-500 focus:ring-4 focus:ring-white transition-all duration-300 outline-none"
                 >
                     ¡Buenísimo, gracias!
