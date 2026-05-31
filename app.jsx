@@ -10,7 +10,7 @@ const GlobalConfig = {
     // El mensaje que verán los usuarios
     updateMessage: "Descarga la nueva versión de la App Store para obtener nuevas funciones, mejoras de estabilidad y acceso a nuevas apps.",                
     // URL para descargar el NUEVO APK de la App Store (modifica este enlace)
-    updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/V1.3.apk",                
+    updateDownloadUrl: "https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/V1.4.apk",                
     // Si es una actualización OBLIGATORIA (true: el botón 'Más tarde' desaparece)
     isForced: false,                
     // CONFIGURACIÓN: CONTRASEÑA DE ADULTOS (¡CÁMBIALA!)
