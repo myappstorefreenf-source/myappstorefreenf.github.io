@@ -6,7 +6,7 @@ const { createRoot } = ReactDOM;
 // ***************************************************************
 const GlobalConfig = {
     // La versión que deberían tener los usuarios (DEBE COINCIDIR con el versionName en build.gradle)
-    requiredAppVersion: "1.3",                 
+    requiredAppVersion: "1.4",                 
     // El mensaje que verán los usuarios
     updateMessage: "Descarga la nueva versión de la App Store para obtener nuevas funciones, mejoras de estabilidad y acceso a nuevas apps.",                
     // URL para descargar el NUEVO APK de la App Store (modifica este enlace)
