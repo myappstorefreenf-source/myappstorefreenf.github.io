@@ -36,12 +36,22 @@ const apps = [
     icon: 'icons/xuper.png',
     description: 'Descarga este NUevo mod de XuperTv en conjunto con su vpn, una vez descargado e instalados los dos archivos solo debes ejecutar Xuper VPN y esperar 30 seg aproximadamente para disfrutar de todo el contenido de Xuper tv.',
     downloads: [
+         { label: 'Xuper Hydra', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.Hydra.apk' },
         { label: 'Xuper 4.99.4', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/XPR_A-XPR.apk' },
         { label: 'Xuper VPN', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.VPN.2.apk' },
                
     ],
     isAvailable: true,
 },
+     {            
+        id: 'Femon Play',            
+        name: 'Femon Play',            
+        publisher: 'Femon Play',            
+        icon: 'icons/femon.png',            
+        description: 'ofrece servicios de transmisión en vivo de los canales  mas importantes.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Femon_Play.apk',            
+        isAvailable: true, // Disponible        
+    },
      {            
         id: 'Butaca TV',            
         name: 'Butaca TV',            
