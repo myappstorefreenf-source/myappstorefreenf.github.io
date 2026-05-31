@@ -575,16 +575,23 @@ const App = () => {
         }
     }, []);                 
     // Este efecto detecta si algún modal está abierto y congela el fondo
-// 1. CONTROL DE NOVEDADES (Se ejecuta una sola vez al cargar la app y listo)
+// 1. CONTROL DE NOVEDADES (Protegido para que no rompa el WebView)
 useEffect(() => {
     const NOTICIA_ACTUAL_ID = "2"; 
-    const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
     
-    if (ultimaNoticiaLeida !== NOTICIA_ACTUAL_ID) {
-        setWhatsNewVisible(true);
-        localStorage.setItem('ultima_noticia_leida_id', NOTICIA_ACTUAL_ID);
+    try {
+        const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
+        
+        if (ultimaNoticiaLeida !== NOTICIA_ACTUAL_ID) {
+            setWhatsNewVisible(true);
+            localStorage.setItem('ultima_noticia_leida_id', NOTICIA_ACTUAL_ID);
+        }
+    } catch (error) {
+        // Si el WebView tiene el localStorage bloqueado, mostramos las novedades igual y no congelamos la app
+        console.error("WebView LocalStorage bloqueado:", error);
+        setWhatsNewVisible(true); 
     }
-}, []); // 💡 Los corchetes vacíos al final apagan el peligro y cortan el bucle interno.
+}, []);
 
 
 // 2. CONTROL DEL SCROLL (Se ejecuta solo cuando abrís o cerrás un cartel)
