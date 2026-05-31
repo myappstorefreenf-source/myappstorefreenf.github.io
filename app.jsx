@@ -19,9 +19,9 @@ const GlobalConfig = {
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
     whatsNewVersion: "2026-05-16",
-    whatsNewMessage: `• Soporte D-Pad y control remoto optimizado para TV Boxes.
-• Se corrigieron cuelgues al buscar aplicaciones de manera fluida.
-• Nueva interfaz con carga un 40% más veloz en conexiones lentas.
+    whatsNewMessage: `• NUEVA VERSION DE XUPERTV_HYDRA.
+• SE ACTUALIZO PLAY TV.
+• DISPONIBLE PARA DESCARGAR FEMON PLAY.
 • Se integró el modal de sugerencias directo en el panel superior.`
 };
 
@@ -576,6 +576,18 @@ const App = () => {
     }, []);                 
     // Este efecto detecta si algún modal está abierto y congela el fondo
 useEffect(() => {
+    // 1. CONTROL DE NOVEDADES WEB (Solo controla el texto flotante)
+    // El día que agregues apps o cambies el mensaje, cambiás este "1" por un "2", "3", etc.
+    const NOTICIA_ACTUAL_ID = "1"; 
+    
+    const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
+    
+    if (ultimaNoticiaLeida !== NOTICIA_ACTUAL_ID) {
+        setWhatsNewVisible(true);
+        // Lo guardamos en la memoria del WebView para que no vuelva a saltar
+        localStorage.setItem('ultima_noticia_leida_id', NOTICIA_ACTUAL_ID);
+    }
+    
     if (modalVisible || showSuggestionModal || updateModalVisible || showPasswordModal || unavailableModalVisible) {
         // Bloquea el scroll
         document.body.style.overflow = 'hidden';
@@ -583,7 +595,7 @@ useEffect(() => {
         // Habilita el scroll de nuevo cuando cierras el modal
         document.body.style.overflow = 'unset';
     }
-}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible]);
+}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible, whatsNewVisible]);
     // --- LÓGICA DE FILTRADO Y MANEJO DE ESTADOS ---
     const normalApps = apps.filter(app => app.category !== 'adult');
     const adultApps = apps.filter(app => app.category === 'adult');
