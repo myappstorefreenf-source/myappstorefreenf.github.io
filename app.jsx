@@ -578,7 +578,7 @@ const App = () => {
 useEffect(() => {
     // 1. CONTROL DE NOVEDADES WEB (Solo controla el texto flotante)
     // El día que agregues apps o cambies el mensaje, cambiás este "1" por un "2", "3", etc.
-    const NOTICIA_ACTUAL_ID = "2"; 
+    const NOTICIA_ACTUAL_ID = "3"; 
     
     const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
     
