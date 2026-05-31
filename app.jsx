@@ -18,7 +18,7 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-05-16",
+    whatsNewVersion: "2026-05-30",
     whatsNewMessage: `• Soporte D-Pad y control remoto optimizado para TV Boxes.
 • Se corrigieron cuelgues al buscar aplicaciones de manera fluida.
 • Nueva interfaz con carga un 40% más veloz en conexiones lentas.
