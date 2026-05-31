@@ -575,27 +575,26 @@ const App = () => {
         }
     }, []);                 
     // Este efecto detecta si algún modal está abierto y congela el fondo
+// 1. CONTROL DE NOVEDADES (Se ejecuta una sola vez al cargar la app y listo)
 useEffect(() => {
-    // 1. CONTROL DE NOVEDADES WEB (Solo controla el texto flotante)
-    // El día que agregues apps o cambies el mensaje, cambiás este "1" por un "2", "3", etc.
     const NOTICIA_ACTUAL_ID = "2"; 
-    
     const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
     
     if (ultimaNoticiaLeida !== NOTICIA_ACTUAL_ID) {
         setWhatsNewVisible(true);
-        // Lo guardamos en la memoria del WebView para que no vuelva a saltar
         localStorage.setItem('ultima_noticia_leida_id', NOTICIA_ACTUAL_ID);
     }
-    
-    if (modalVisible || showSuggestionModal || updateModalVisible || showPasswordModal || unavailableModalVisible) {
-        // Bloquea el scroll
+}, []); // 💡 Los corchetes vacíos al final apagan el peligro y cortan el bucle interno.
+
+
+// 2. CONTROL DEL SCROLL (Se ejecuta solo cuando abrís o cerrás un cartel)
+useEffect(() => {
+    if (modalVisible || showSuggestionModal || updateModalVisible || showPasswordModal || unavailableModalVisible || whatsNewVisible) {
         document.body.style.overflow = 'hidden';
     } else {
-        // Habilita el scroll de nuevo cuando cierras el modal
         document.body.style.overflow = 'unset';
     }
-}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible]);
+}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible, whatsNewVisible]);
     // --- LÓGICA DE FILTRADO Y MANEJO DE ESTADOS ---
     const normalApps = apps.filter(app => app.category !== 'adult');
     const adultApps = apps.filter(app => app.category === 'adult');
