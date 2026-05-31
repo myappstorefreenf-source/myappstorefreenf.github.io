@@ -595,7 +595,7 @@ useEffect(() => {
         // Habilita el scroll de nuevo cuando cierras el modal
         document.body.style.overflow = 'unset';
     }
-}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible, whatsNewVisible]);
+}, [modalVisible, showSuggestionModal, updateModalVisible, showPasswordModal, unavailableModalVisible]);
     // --- LÓGICA DE FILTRADO Y MANEJO DE ESTADOS ---
     const normalApps = apps.filter(app => app.category !== 'adult');
     const adultApps = apps.filter(app => app.category === 'adult');
