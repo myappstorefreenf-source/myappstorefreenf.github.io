@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+   <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+        alert("🚨 ERROR DETECTADO EN LA APP:\n\n" + 
+              "Mensaje: " + message + "\n" +
+              "Archivo: " + source + "\n" +
+              "Línea: " + lineno);
+        return false;
+    };
+</script>
 <head>
    
     <meta charset="UTF-8">
