@@ -103,7 +103,16 @@ const apps = [
         publisher: 'Play teve',            
         icon: 'icons/playteve.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Play.TV.Premium.Mod3.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayTV.Premium.7.0.apk',            
+        isAvailable: true, // Disponible        
+    },  
+     {            
+        id: 'playteve2',            
+        name: 'Play Teve 2',            
+        publisher: 'Play teve 2',            
+        icon: 'icons/playteve2.png',            
+        description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayTV_Premium.apk',            
         isAvailable: true, // Disponible        
     },        
     {            
