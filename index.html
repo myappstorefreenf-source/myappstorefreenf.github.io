@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-   <script>
-    window.onerror = function(message, source, lineno, colno, error) {
-        alert("🚨 ERROR DETECTADO EN LA APP:\n\n" + 
-              "Mensaje: " + message + "\n" +
-              "Archivo: " + source + "\n" +
-              "Línea: " + lineno);
-        return false;
-    };
-</script>
+  
 <head>
    
     <meta charset="UTF-8">
@@ -56,27 +48,16 @@ document.onkeydown = function(e) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
+<script>
+      Babel.registerPreset('custom-react', {
+        presets: [
+          [Babel.availablePresets['react'], { runtime: 'classic' }]
+        ]
+      });
+    </script>
 </head>
-<body class="bg-zinc-950 text-white m-0 p-0 overflow-hidden">
-
-    <div id="maintenance-overlay" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-zinc-900 px-4 text-center">
-        <div class="mb-6 rounded-full bg-amber-500/10 p-4 text-amber-500 animate-pulse">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-            </svg>
-        </div>
-        
-        <h1 class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-3">
-            Dificultades Técnicas
-        </h1>
-        <p class="text-lg text-zinc-400 max-w-md">
-            Estamos realizando mejoras en la App Store. Volveremos a estar en línea a la brevedad. Disculpa las molestias.
-        </p>
-
-        <div class="mt-8 border-4 border-zinc-700 border-t-amber-500 h-8 w-8 rounded-full animate-spin"></div>
-    </div>
+<body>
     <div id="root"></div>
     
-    <script type="text/babel" src="app.jsx"></script> 
+    <script type="text/babel" data-presets="custom-react" src="app.jsx"></script> 
 </body>
-</html>
