@@ -284,7 +284,7 @@ const apps = [
         publisher: 'Magma',            
             icon: 'icons/magma.png',            
         description: 'Magma es un reproductor de listas m3u, requiere una minima configuracion inicial, al pedirte los datos ingresa servidor:http://magmaplayer.com/ usuario: m contraseña: m y disfruta de todo el contenido .',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Magma+Plus.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/MagmaPlus.apk',            
         isAvailable: true,        
     },        
      {            
