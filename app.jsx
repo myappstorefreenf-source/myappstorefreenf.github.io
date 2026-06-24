@@ -19,10 +19,9 @@ const GlobalConfig = {
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
     whatsNewVersion: "2026-05-16",
-    whatsNewMessage: `• NUEVA VERSION DE XUPERTV_HYDRA.
-• SE ACTUALIZO PLAY TV.
-• DISPONIBLE PARA DESCARGAR FEMON PLAY.
-• Se integró el modal de sugerencias directo en el panel superior.`
+    whatsNewMessage: `• NUEVA VERSION DE MAGMA.
+• SE AGREGO PUNTO PLAY.
+• DISPONIBLE PARA DESCARGAR MAGLINK. `
 };
 
 // ***************************************************************
@@ -300,7 +299,7 @@ const apps = [
      {            
         id: 'Punto play ',            
         name: 'Punto play',            
-        publisher: 'MagLink ',            
+        publisher: 'Punto Play ',            
             icon: 'icons/punto.png',            
         description: 'Magma es un reproductor de listas m3u, requiere una minima configuracion inicial, al pedirte los datos ingresa servidor:http://magmaplayer.com/ usuario: m contraseña: m y disfruta de todo el contenido .',            
         downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Punto_Play_Premium_V7.1.apk',            
@@ -603,7 +602,7 @@ const App = () => {
     // Este efecto detecta si algún modal está abierto y congela el fondo
 // 1. CONTROL DE NOVEDADES (Protegido para que no rompa el WebView)
 useEffect(() => {
-    const NOTICIA_ACTUAL_ID = "2"; 
+    const NOTICIA_ACTUAL_ID = "3"; 
     
     try {
         const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
