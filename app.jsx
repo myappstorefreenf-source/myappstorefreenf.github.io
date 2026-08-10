@@ -18,9 +18,9 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-08-10",
+    whatsNewVersion: "2026-08-11",
     whatsNewMessage: `• DISPONIBLE PLAY TV PREMIUM V20.1.
-• NUEVA VERSION DISPONIBLE DE PUNTO PLAY.`
+• NUEVA VERSION DE PUNTO PLAY.`
 };
 
 // ***************************************************************
