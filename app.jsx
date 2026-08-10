@@ -19,9 +19,8 @@ const GlobalConfig = {
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
     whatsNewVersion: "2026-05-16",
-    whatsNewMessage: `• NUEVA VERSION DE MAGMA.
-• SE AGREGO PUNTO PLAY.
-• DISPONIBLE PARA DESCARGAR MAGLINK. `
+    whatsNewMessage: `• DISPONIBLE PLAY TV PREMIUM V20.1.
+• NUEVA VERSION DISPONIBLE DE PUNTO PLAY.`
 };
 
 // ***************************************************************
@@ -102,7 +101,7 @@ const apps = [
         publisher: 'Play teve',            
         icon: 'icons/playteve.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes canales,miara tus programas y series favoritos.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayTV.Premium.7.0.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/PlayTV.Premium.20.1.apk',            
         isAvailable: true, // Disponible        
     },  
      {            
@@ -302,7 +301,7 @@ const apps = [
         publisher: 'Punto Play ',            
             icon: 'icons/punto.png',            
         description: 'Magma es un reproductor de listas m3u, requiere una minima configuracion inicial, al pedirte los datos ingresa servidor:http://magmaplayer.com/ usuario: m contraseña: m y disfruta de todo el contenido .',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Punto_Play_Premium_V7.1.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Punto_Play_Premium_V9.apk',            
         isAvailable: true,        
     },        
     {            
