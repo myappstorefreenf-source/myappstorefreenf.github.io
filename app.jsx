@@ -19,8 +19,9 @@ const GlobalConfig = {
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
     whatsNewVersion: "2026-08-11",
-    whatsNewMessage: `• DISPONIBLE PLAY TV PREMIUM V20.1.
-• NUEVA VERSION DE PUNTO PLAY.`
+    whatsNewMessage: `• HORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
+• NUEVA VERSION DE fEMON FEMON PLUS.
+• NUEVA VERSION DE M PLUS`
 };
 
 // ***************************************************************
@@ -47,7 +48,7 @@ const apps = [
         publisher: 'Femon Play',            
         icon: 'icons/femon.png',            
         description: 'ofrece servicios de transmisión en vivo de los canales  mas importantes.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Femon_Play.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Femon.Plus.20.1.apk',            
         isAvailable: true, // Disponible        
     },
      {            
@@ -182,7 +183,7 @@ const apps = [
         publisher: 'mplus.',            
         icon: 'icons/mplus.png',            
         description: 'ofrece servicios de transmisión en vivo de diferentes eventos deportivos, como la Serie A italiana, la Primera división brasileña Football League, Thailand Super Football League, Singapore Super Football League, Asian League Champions Cup,  y otros eventos en vivo.',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/mplus21_sign.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/M.Plus.Pro.6_2.0.apk',            
         isAvailable: true,        
     },
     {            
@@ -724,7 +725,7 @@ useEffect(() => {
                 <section className="mb-10">
                     <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
                     <div className="app-container flex overflow-x-auto space-x-6 pb-4">
-                        {normalApps.filter(app => app.id.includes('mgt') || app.id === 'MPLUS2').map(app => (
+                        {normalApps.filter(app => app.id.includes('Femon Play') || app.id === 'MPLUS2').map(app => (
                             <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
                         ))}
                     </div>
