@@ -18,10 +18,10 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-09-10",
-    whatsNewMessage: `• HORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
+    whatsNewVersion: "2026-09-09",
+    whatsNewMessage: `• AHORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
 • NUEVA VERSION DE fEMON FEMON PLUS.
-• NUEVA VERSION DE M PLUS`
+• NUEVA VERSION DE M PLUS.`
 };
 
 // ***************************************************************
