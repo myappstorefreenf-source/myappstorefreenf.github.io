@@ -18,10 +18,10 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-09-11",
+    whatsNewVersion: "2026-10-10",
     whatsNewMessage: `• AHORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
 • NUEVA VERSION DE  FEMON PLUS.
-• NUEVA VERSION DE M PLUS.`
+• NUEVA VERSION DE PUNTO PLAY.`
 };
 
 // ***************************************************************
@@ -302,7 +302,7 @@ const apps = [
         publisher: 'Punto Play ',            
             icon: 'icons/punto.png',            
         description: 'Magma es un reproductor de listas m3u, requiere una minima configuracion inicial, al pedirte los datos ingresa servidor:http://magmaplayer.com/ usuario: m contraseña: m y disfruta de todo el contenido .',            
-        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Punto_Play_Premium_V9.apk',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Punto_Play_Plus_.3.apk',            
         isAvailable: true,        
     },        
     {            
