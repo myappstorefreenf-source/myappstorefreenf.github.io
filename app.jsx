@@ -18,10 +18,11 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-10-10",
+    whatsNewVersion: "2026-11-13",
     whatsNewMessage: `• AHORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
-• NUEVA VERSION DE  FEMON PLUS.
-• NUEVA VERSION DE PUNTO PLAY.`
+• NUEVA VERSION DE  Xuper TV verison oficial 4.99.30.
+IMPORTANTE RECUERDEN QUE DEBEN INICIAR  CON SU CCUENTA, HABILITEN MAS  TIEMPO A XUPER VPN PARA PODER INICIAR SESION,
+UNA VEZ INICIADA LA SESION PUEDEN VOLVER A PONER LOS 30 SEGUNDOS DE XUPER VPN   `
 };
 
 // ***************************************************************
@@ -35,8 +36,8 @@ const apps = [
     icon: 'icons/xuper.png',
     description: 'Descarga este NUevo mod de XuperTv en conjunto con su vpn, una vez descargado e instalados los dos archivos solo debes ejecutar Xuper VPN y esperar 30 seg aproximadamente para disfrutar de todo el contenido de Xuper tv.',
     downloads: [
-         { label: 'Xuper Hydra', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.Hydra.apk' },
-        { label: 'Xuper 4.99.4', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/XPR_A-XPR.apk' },
+        // { label: 'Xuper Hydra', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.Hydra.apk' },
+        { label: 'Xuper 4.99.20', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper4.99.20.apk' },
         { label: 'Xuper VPN', url: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/Xuper.VPN.2.apk' },
                
     ],
