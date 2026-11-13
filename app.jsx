@@ -18,7 +18,7 @@ const GlobalConfig = {
     // NUEVA CONFIGURACIÓN: URL del formulario de reclamos/sugerencias
     suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdaj6_OdOOVC2Q9oqGTfP1RegI1NZNdxngbDwPGE6cjgtoTpw/viewform?usp=dialog", // <-- ¡MODIFICA ESTA URL CON TU ENLACE REAL!
     // NUEVO: Mensaje de novedades para el sistema web
-    whatsNewVersion: "2026-11-13",
+    whatsNewVersion: "2026-13-11",
     whatsNewMessage: `• AHORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
 • NUEVA VERSION DE  Xuper TV verison oficial 4.99.30.
 IMPORTANTE RECUERDEN QUE DEBEN INICIAR  CON SU CCUENTA, HABILITEN MAS  TIEMPO A XUPER VPN PARA PODER INICIAR SESION,
@@ -726,7 +726,7 @@ useEffect(() => {
                 <section className="mb-10">
                     <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
                     <div className="app-container flex overflow-x-auto space-x-6 pb-4">
-                        {normalApps.filter(app => app.id.includes('Femon Play') || app.id === 'MPLUS2').map(app => (
+                        {normalApps.filter(app => app.id.includes('Femon Play') || app.id === 'Xuper').map(app => (
                             <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
                         ))}
                     </div>
