@@ -20,7 +20,7 @@ const GlobalConfig = {
     // NUEVO: Mensaje de novedades para el sistema web
     whatsNewVersion: "2026-13-11",
     whatsNewMessage: `• AHORA LAS NUEVAS APP LA PODES ENCONTRAR EN LA PARTE SUPERIOR DE DESTACADOS .
-• NUEVA VERSION DE  Xuper TV verison oficial 4.99.20.
+• NUEVA VERSION DE   TV nf .
 IMPORTANTE RECUERDEN QUE DEBEN INICIAR  CON SU CUENTA, HABILITEN MAS  TIEMPO A XUPER VPN PARA PODER INICIAR SESION,
 UNA VEZ INICIADA LA SESION PUEDEN VOLVER A PONER LOS 30 SEGUNDOS DE XUPER VPN   `
 };
@@ -612,7 +612,7 @@ const App = () => {
     // Este efecto detecta si algún modal está abierto y congela el fondo
 // 1. CONTROL DE NOVEDADES (Protegido para que no rompa el WebView)
 useEffect(() => {
-    const NOTICIA_ACTUAL_ID = "4"; 
+    const NOTICIA_ACTUAL_ID = "5"; 
     
     try {
         const ultimaNoticiaLeida = localStorage.getItem('ultima_noticia_leida_id');
@@ -735,7 +735,7 @@ useEffect(() => {
                 <section className="mb-10">
                     <h2 className="text-2xl font-bold mb-4 ml-2">Destacadas</h2>
                     <div className="app-container flex overflow-x-auto space-x-6 pb-4">
-                        {normalApps.filter(app => app.id.includes('Femon Play') || app.id === 'Xuper').map(app => (
+                        {normalApps.filter(app => app.id.includes('Xupernf') || app.id === '').map(app => (
                             <AppCard key={app.id} app={app} onPress={() => openModal(app)} />
                         ))}
                     </div>
