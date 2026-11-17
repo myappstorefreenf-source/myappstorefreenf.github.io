@@ -43,6 +43,15 @@ const apps = [
     ],
     isAvailable: true,
 },
+      {            
+        id: 'Xupernf',            
+        name: 'Xuper NF',            
+        publisher: 'Xuper NF',            
+        icon: 'icons/xupernf.png',            
+        description: 'NUEVA VERSION DISPONIBLE DE XUPER TV, ESTA NUEVA VERSION NO NECESITA DE LA VPN, SOLO LA INSTALAS Y A DISFRUTAR ',            
+        downloadUrl: 'https://github.com/myappstorefreenf-source/mis-apps-android/releases/download/1.0.0.0/XuperTv.v4.35.1.apk',            
+        isAvailable: true, // Disponible        
+    },
      {            
         id: 'Femon Play',            
         name: 'Femon Play',            
